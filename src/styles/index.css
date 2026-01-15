@@ -1,0 +1,5 @@
+/* src/styles/index.css */
+/* Combined styles entry */
+
+@import './variables.css';
+@import './chatbot.css';

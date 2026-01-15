@@ -1,0 +1,95 @@
+{
+  "name": "@astermind/chatbot-template",
+  "version": "1.0.0",
+  "description": "Embeddable AI chatbot widget with React support for AsterMind RAG",
+  "type": "module",
+  "main": "dist/astermind-chatbot.umd.js",
+  "module": "dist/astermind-chatbot.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/astermind-chatbot.esm.js",
+      "require": "./dist/astermind-chatbot.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/astermind-chatbot.css",
+    "./standalone": "./dist/astermind-chatbot.min.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c && npm run build:css",
+    "build:css": "postcss src/styles/index.css -o dist/astermind-chatbot.css",
+    "dev": "rollup -c -w",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "npm version patch --no-git-tag-version 2>/dev/null || true",
+    "prepublishOnly": "npm run build"
+  },
+  "optionalDependencies": {
+    "@astermind/cybernetic-chatbot-client": "^1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-replace": "^5.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "autoprefixer": "^10.0.0",
+    "cssnano": "^6.0.0",
+    "jsdom": "^27.4.0",
+    "postcss": "^8.0.0",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^16.1.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rollup": "^4.0.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "keywords": [
+    "chatbot",
+    "widget",
+    "react",
+    "astermind",
+    "rag",
+    "ai",
+    "embed"
+  ],
+  "author": "AsterMind Team",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astermind/chatbot-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/astermind/chatbot-template/issues"
+  },
+  "homepage": "https://github.com/astermind/chatbot-template#readme"
+}

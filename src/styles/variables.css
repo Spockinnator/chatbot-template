@@ -1,0 +1,32 @@
+/* src/styles/variables.css */
+/* CSS custom properties for theming */
+
+:root {
+  /* Colors */
+  --astermind-primary: #4F46E5;
+  --astermind-primary-hover: #4338CA;
+  --astermind-background: #ffffff;
+  --astermind-surface: #f3f4f6;
+  --astermind-text: #1f2937;
+  --astermind-text-muted: #6b7280;
+  --astermind-border: #e5e7eb;
+
+  /* Message bubbles */
+  --astermind-user-bg: #4F46E5;
+  --astermind-user-text: #ffffff;
+  --astermind-bot-bg: #f3f4f6;
+  --astermind-bot-text: #1f2937;
+
+  /* Sizing */
+  --astermind-widget-width: 380px;
+  --astermind-widget-height: 520px;
+  --astermind-bubble-size: 60px;
+  --astermind-border-radius: 12px;
+
+  /* Typography */
+  --astermind-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --astermind-font-size: 14px;
+
+  /* Effects */
+  --astermind-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}

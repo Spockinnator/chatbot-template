@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AsterMind Chatbot - Vanilla JS Example</title>
+
+  <!-- AsterMind Chatbot Styles -->
+  <link rel="stylesheet" href="../dist/astermind-chatbot.css">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #1f2937;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .config-section {
+      margin-top: 32px;
+    }
+
+    .config-section h3 {
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    pre {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+
+    code {
+      font-family: 'Monaco', 'Menlo', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AsterMind Chatbot Demo</h1>
+    <p>
+      This page demonstrates the AsterMind Chatbot widget using vanilla JavaScript.
+      Click the chat bubble in the bottom-right corner to open the chat.
+    </p>
+
+    <div class="card">
+      <h2>About This Demo</h2>
+      <p>
+        The chatbot widget is loaded using a single script tag and initialized with
+        JavaScript. No build tools or frameworks required.
+      </p>
+      <p>
+        Try asking questions about your knowledge base. The chatbot will stream
+        responses in real-time and show source citations when available.
+      </p>
+    </div>
+
+    <div class="config-section">
+      <h3>Configuration Used</h3>
+      <pre><code>AsterMindChatbot.init({
+  apiUrl: 'https://your-api-url.com',
+  apiKey: 'your-api-key',
+  position: 'bottom-right',
+  theme: {
+    primaryColor: '#4F46E5',
+    borderRadius: '16px'
+  },
+  greeting: 'Hi! How can I help you today?',
+  placeholder: 'Ask me anything...',
+  headerTitle: 'AsterMind Assistant',
+  headerSubtitle: 'Powered by AI',
+  agent: {
+    enabled: true,
+    siteMap: [
+      { path: '/products', name: 'Products' },
+      { path: '/contact', name: 'Contact' }
+    ]
+  },
+  fallback: {
+    enabled: true,
+    message: 'Working in offline mode'
+  },
+  onReady: function() {
+    console.log('Chatbot ready!');
+  },
+  onMessage: function(message) {
+    console.log('Message:', message);
+  }
+});</code></pre>
+    </div>
+  </div>
+
+  <!-- AsterMind Chatbot Script -->
+  <script src="../dist/astermind-chatbot.min.js"></script>
+  <script>
+    // Initialize the chatbot
+    // Replace apiUrl and apiKey with your actual values
+    AsterMindChatbot.init({
+      apiUrl: 'https://your-api-url.com',  // Your AsterMind API URL
+      apiKey: 'your-api-key',              // Your API key
+      position: 'bottom-right',
+      theme: {
+        primaryColor: '#4F46E5',
+        borderRadius: '16px'
+      },
+      greeting: 'Hi! How can I help you today?',
+      placeholder: 'Ask me anything...',
+      headerTitle: 'AsterMind Assistant',
+      headerSubtitle: 'Powered by AI',
+      agent: {
+        enabled: true,
+        siteMap: [
+          { path: '/products', name: 'Products', description: 'View our products' },
+          { path: '/contact', name: 'Contact', description: 'Get in touch with us' }
+        ]
+      },
+      fallback: {
+        enabled: true,
+        message: 'Working in offline mode'
+      },
+      onReady: function() {
+        console.log('[Demo] Chatbot is ready!');
+      },
+      onMessage: function(message) {
+        console.log('[Demo] New message:', message);
+      },
+      onAction: function(action) {
+        console.log('[Demo] Action performed:', action);
+      },
+      onError: function(error) {
+        console.error('[Demo] Error:', error);
+      },
+      onToggle: function(isOpen) {
+        console.log('[Demo] Chat window:', isOpen ? 'opened' : 'closed');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+# Source files
+src/
+src/__tests__/
+
+# TypeScript source (keep .d.ts)
+*.ts
+*.tsx
+!*.d.ts
+
+# Config files
+tsconfig.json
+rollup.config.js
+vitest.config.ts
+postcss.config.cjs
+.eslintrc*
+.prettierrc*
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Test
+coverage/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Development
+.vscode/
+.idea/
